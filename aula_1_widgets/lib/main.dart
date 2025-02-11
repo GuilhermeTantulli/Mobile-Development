@@ -11,29 +11,20 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter',
-      home: Stack(
-        alignment: AlignmentDirectional.center,
+      home: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Container(
-            color: Colors.black,
-            width: 300,
-            height: 300,
-          ),
-          Container(
             color: Colors.red,
-            width: 150,
-            height: 150,
+            width: 100,
+            height: 100,
             ),
           Container(
             color: Colors.blue,
-            width: 75,
-            height: 75,
+            width: 100,
+            height: 100,
             ),
-          Container(
-            color: Colors.yellow,
-            width: 37,
-            height: 37,
-          )
         ],
       ),
     );
