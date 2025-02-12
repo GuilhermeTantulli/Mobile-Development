@@ -20,11 +20,10 @@ class MainApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Task(),
-            Task(),
-            Task(),
-            Task(),
-            Task(),
+            Task('Aprender Flutter'),
+            Task('Treinar'),
+            Task('Me alimentar'),
+            Task('Beber água'),
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
@@ -35,7 +34,8 @@ class MainApp extends StatelessWidget {
 }
 
 class Task extends StatelessWidget {
-  const Task({super.key});
+  final String nome;
+  const Task(this.nome, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class Task extends StatelessWidget {
                       height: 100,
                     ),
                     Text(
-                      'Aprender Flutter',
+                      nome,
                     ),
                     ElevatedButton(
                       onPressed: () {},
