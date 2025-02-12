@@ -10,15 +10,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-        ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Tarefas'),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
+        body: ListView(
           children: [
             Task('Aprender Flutter'),
             Task('Treinar'),
@@ -27,7 +25,6 @@ class MainApp extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
-        
       ),
     );
   }
@@ -39,38 +36,48 @@ class Task extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-          child: Stack(
-            children: [
-              Container(
-                color: Colors.blue,
-                height: 140,
-              ),
-              Container(
-                color: Colors.white,
-                height: 100,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      color: Colors.black26,
-                      width: 72,
-                      height: 100,
-                    ),
-                    Text(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.blue,
+              height: 140,
+            ),
+            Container(
+              color: Colors.white,
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    color: Colors.black26,
+                    width: 72,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 200,
+                    child: Text(
                       nome,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Icon(
-                        Icons.arrow_drop_up,
+                      style: TextStyle(
+                        fontSize: 24,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        );
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.arrow_drop_down,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
