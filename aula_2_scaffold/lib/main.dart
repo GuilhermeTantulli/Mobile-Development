@@ -24,7 +24,6 @@ class MainApp extends StatelessWidget {
             Task('Beber água'),
           ],
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
   }
@@ -39,6 +38,10 @@ class Task extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: const Color.fromARGB(20, 0, 0, 0), width: 2),
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Stack(
           children: [
             Container(
