@@ -10,11 +10,36 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+        ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Tarefas'),
+          backgroundColor: Colors.blue,
         ),
-        body: Container(
+        body: Column(
+          children: [
+            Task(),
+            Task(),
+            Task(),
+            Task(),
+            Task(),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
+        
+      ),
+    );
+  }
+}
+
+class Task extends StatelessWidget {
+  const Task({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
           child: Stack(
             children: [
               Container(
@@ -46,9 +71,6 @@ class MainApp extends StatelessWidget {
               )
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
-      ),
-    );
+        );
   }
 }
